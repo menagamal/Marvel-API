@@ -1,0 +1,6 @@
+framework module Pods_NTGTags {
+  umbrella header "Pods-NTGTags-umbrella.h"
+
+  export *
+  module * { export * }
+}
