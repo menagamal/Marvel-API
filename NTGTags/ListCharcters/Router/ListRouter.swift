@@ -13,7 +13,7 @@ import Hero
 
 class ListRouter: BaseRouter{
     enum Destination {
-        case  CharacterDetails(character:Results),None
+        case  SearchCharacters , CharacterDetails(character:Results),None
     }
     var navigationController: UINavigationController?
     // MARK: - Initializer
@@ -47,10 +47,17 @@ class ListRouter: BaseRouter{
         DetailsBuilder().build(navigator: navigationController!, vc: vc, character: character)
         return vc
     }
+    private func searchCharacters() -> SearchViewController{
+        let vc:SearchViewController = UIViewController.instanceXib()
+        SearchBuilder().build(navigator: navigationController!, vc: vc)
+        return vc
+    }
     
  
     func makeViewController(for destination: Destination) -> UIViewController {
         switch destination {
+        case .SearchCharacters:
+            return searchCharacters()
         case .None:
             return UIViewController()
         case .CharacterDetails(let character):

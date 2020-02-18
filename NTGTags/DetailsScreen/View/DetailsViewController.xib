@@ -36,6 +36,16 @@
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0Ll-xf-OIM">
                                     <rect key="frame" x="0.0" y="0.0" width="459" height="461"/>
                                 </imageView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rpu-qt-rGC">
+                                    <rect key="frame" x="16" y="16" width="46" height="36"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                    <state key="normal" title="Back">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="dismissVc:" destination="-1" eventType="touchUpInside" id="9CE-fv-DKZ"/>
+                                    </connections>
+                                </button>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="v1v-Bw-SfL">
                                     <rect key="frame" x="0.0" y="469" width="459" height="1300"/>
                                     <subviews>
@@ -337,9 +347,11 @@
                                 <constraint firstItem="0Ll-xf-OIM" firstAttribute="leading" secondItem="d3s-HK-QJa" secondAttribute="leading" id="Bf2-j6-9Aq"/>
                                 <constraint firstAttribute="trailing" secondItem="v1v-Bw-SfL" secondAttribute="trailing" id="Bic-FG-xfh"/>
                                 <constraint firstItem="0Ll-xf-OIM" firstAttribute="top" secondItem="d3s-HK-QJa" secondAttribute="top" id="Bjg-Gr-i5O"/>
+                                <constraint firstItem="Rpu-qt-rGC" firstAttribute="leading" secondItem="d3s-HK-QJa" secondAttribute="leading" constant="16" id="Csd-BM-gOg"/>
                                 <constraint firstAttribute="trailing" secondItem="0Ll-xf-OIM" secondAttribute="trailing" id="Oea-9F-vC3"/>
                                 <constraint firstAttribute="bottom" secondItem="v1v-Bw-SfL" secondAttribute="bottom" constant="75" id="Q86-hd-PNC"/>
                                 <constraint firstItem="v1v-Bw-SfL" firstAttribute="top" secondItem="0Ll-xf-OIM" secondAttribute="bottom" constant="8" id="jwp-gU-qLH"/>
+                                <constraint firstItem="Rpu-qt-rGC" firstAttribute="top" secondItem="d3s-HK-QJa" secondAttribute="top" constant="16" id="lYi-xu-PJY"/>
                                 <constraint firstItem="0Ll-xf-OIM" firstAttribute="height" secondItem="d3s-HK-QJa" secondAttribute="height" multiplier="0.25" id="rvj-7m-gGt"/>
                             </constraints>
                         </view>

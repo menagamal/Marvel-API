@@ -13,4 +13,6 @@ protocol ListView :class{
     var charactersTableView: UITableView! {
         get set
     }
+    
+    func showError(str:String)  
 }

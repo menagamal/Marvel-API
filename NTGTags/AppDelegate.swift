@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import IQKeyboardManagerSwift
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -15,6 +15,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        IQKeyboardManager.shared.enable = true
+        LoadingView.str = "loading"
+        
+        LoadingView.loadingSize = 70
+        //#6771E4
+        UINavigationBar.appearance().tintColor = .white
+        
+        IQKeyboardManager.shared.toolbarTintColor = UIColor.blue
+        
         return true
     }
 

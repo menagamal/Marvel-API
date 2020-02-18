@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 class ListViewController: UIViewController,ListView{
     
+    
     var presenter: ListPresenter?
     
     @IBOutlet weak var charactersTableView: UITableView!
@@ -23,6 +24,11 @@ class ListViewController: UIViewController,ListView{
         imageView.contentMode = .scaleAspectFit
         self.navigationItem.titleView = imageView
         
+        let image = UIImage(named: "search")?.withRenderingMode(.alwaysOriginal)
+        let button = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(searchCharacters(_:)))
+        navigationItem.rightBarButtonItems = [button]
+        
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -35,6 +41,17 @@ class ListViewController: UIViewController,ListView{
         }
     }
     
+    @objc func searchCharacters(_ sender: Any) {
+        if NetworkReachabilityManager()!.isReachable {
+            self.presenter?.searchCharacters()
+        } else {
+            Toast.showAlert(viewController: self, text: "Check your internet connection to be able to search.")
+        }
+        
+    }
+    func showError(str: String) {
+        Toast.showAlert(viewController: self, text: str)
+    }
     
 }
 
